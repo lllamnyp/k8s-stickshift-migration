@@ -1,0 +1,11 @@
+bin
+basebox/*.box
+cluster.rkestate
+kube_config_cluster.yml
+*_rsa
+*_rsa.pub
+.vagrant
+/ca
+/pki
+/rke/cluster.rkestate
+/rke/kube_config_cluster.yml

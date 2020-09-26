@@ -1,0 +1,8 @@
+rancher/hyperkube:v1.15.5-rancher1
+rancher/rke-tools:v0.1.50
+rancher/nginx-ingress-controller:nginx-0.25.1-rancher1
+rancher/calico-node:v3.7.4
+rancher/calico-cni:v3.7.4
+rancher/coreos-flannel:v0.11.0
+rancher/coreos-etcd:v3.3.10-rancher1
+rancher/pause:3.1

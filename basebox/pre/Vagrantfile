@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+BASE_IMAGE = "bento/ubuntu-18.04"
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "devopslive" do |node|
+    node.vm.box = BASE_IMAGE
+    node.vm.hostname = "devopslive"
+    node.vm.provision :shell, path: "provision_node.sh"
+  end
+
+end

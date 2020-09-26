@@ -1,0 +1,7 @@
+{
+  "CN": "haproxy",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  }
+}

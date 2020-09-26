@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+NODE_IMAGE = "devopslive"
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "devopslive" do |node|
+    node.vm.box = NODE_IMAGE
+    node.vm.box_url = "file://../node.box"
+    node.vm.hostname = "devopslive"
+  end
+
+end
