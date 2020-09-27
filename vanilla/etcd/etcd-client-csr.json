@@ -1,0 +1,9 @@
+{
+  "CN": "etcd-local-client",
+  "hosts": [
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  }
+}

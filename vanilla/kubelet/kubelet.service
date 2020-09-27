@@ -1,0 +1,22 @@
+[Unit]
+Description=kubelet: The Kubernetes Node Agent
+Documentation=https://kubernetes.io/docs/home/
+
+[Service]
+ExecStart=/usr/local/bin/kubelet \
+  --config=/etc/kubernetes/config/kubelet-config.yaml \
+  --image-pull-progress-deadline=2m \
+  --kubeconfig=/etc/kubernetes/config/kubelet.kubeconfig \
+  --container-runtime=remote \
+  --container-runtime-endpoint=unix:///var/run/containerd/containerd.sock \
+  --hostname-override=node3.devopslive.ru \
+  --network-plugin=cni \
+  --register-node=true \
+  --v=2 \
+  --volume-plugin-dir=/usr/libexec/kubernetes/kubelet-plugins/volume/exec
+Restart=always
+StartLimitInterval=0
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

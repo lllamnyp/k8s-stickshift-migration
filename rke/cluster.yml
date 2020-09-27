@@ -4,17 +4,17 @@ kubernetes_version: v1.15.5-rancher1-2
 
 nodes:
   - address: node1.devopslive.ru
-#     internal_address: 10.0.0.11
+    internal_address: 10.0.0.11
     user: vagrant
     role: ["etcd","controlplane","worker"]
     ssh_key_path: /home/lllamnyp/Cloud/dev/devopsconf/k8s-stickshift-migration/devopslive_rsa
   - address: node2.devopslive.ru
-#     internal_address: 10.0.0.12
+    internal_address: 10.0.0.12
     user: vagrant
     role: ["etcd","controlplane","worker"]
     ssh_key_path: /home/lllamnyp/Cloud/dev/devopsconf/k8s-stickshift-migration/devopslive_rsa
   - address: node3.devopslive.ru
-#     internal_address: 10.0.0.13
+    internal_address: 10.0.0.13
     user: vagrant
     role: ["etcd","controlplane","worker"]
     ssh_key_path: /home/lllamnyp/Cloud/dev/devopsconf/k8s-stickshift-migration/devopslive_rsa
@@ -22,6 +22,10 @@ nodes:
 network:
   plugin: canal
   options:
+    canal_iface: eth1
+
+monitoring:
+  provider: none
 
 # dns:
 #   provider: none

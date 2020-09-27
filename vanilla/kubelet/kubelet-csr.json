@@ -1,0 +1,12 @@
+{
+  "CN": "system:node:node3.devopslive.ru",
+  "names": [
+    {
+      "O": "system:nodes"
+    }
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  }
+}

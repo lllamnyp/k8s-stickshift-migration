@@ -20,8 +20,9 @@ sed -i /swap/d /etc/fstab
 
 mount -a
 
-apt-get update
-apt-get install -y docker-ce=18.06.3~ce~3-0~ubuntu haproxy
+apt update
+apt install -y docker-ce=18.06.3~ce~3-0~ubuntu haproxy
+apt install containerd conntrack
 systemctl stop haproxy
 systemctl disable haproxy
 rm /etc/rsyslog.d/49-haproxy.conf

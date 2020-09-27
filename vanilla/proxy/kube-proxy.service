@@ -1,0 +1,16 @@
+[Unit]
+Description=Kubernetes Kube Proxy
+Documentation=https://github.com/kubernetes/kubernetes
+
+[Service]
+LimitNOFILE=32768
+LimitNOFILESoft=16384
+ExecStart=/usr/local/bin/kube-proxy \
+  --config=/etc/kubernetes/config/kube-proxy-config.yaml \
+  --hostname-override=node3.devopslive.ru
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+

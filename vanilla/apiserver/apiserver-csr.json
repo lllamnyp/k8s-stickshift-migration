@@ -1,0 +1,18 @@
+{
+  "CN": "kube-apiserver",
+  "hosts": [
+    "node3.devopslive.ru",
+    "10.0.0.13",
+    "localhost",
+    "127.0.0.1",
+    "kubernetes",
+    "kubernetes.default",
+    "kubernetes.default.svc",
+    "kubernetes.defaults.svc.cluster.local",
+    "10.43.0.1"
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  }
+}

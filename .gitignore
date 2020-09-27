@@ -9,3 +9,4 @@ kube_config_cluster.yml
 /pki
 /rke/cluster.rkestate
 /rke/kube_config_cluster.yml
+notes

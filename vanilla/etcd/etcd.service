@@ -1,0 +1,30 @@
+[Unit]
+Description=etcd
+Documentation=https://github.com/coreos
+
+[Service]
+Environment="ETCD_NAME=etcd-node3.devopslive.ru"
+Environment="ETCD_INITIAL_CLUSTER=etcd-node2.devopslive.ru=https://node2.devopslive.ru:2380,etcd-node3.devopslive.ru=https://node3.devopslive.ru:2380,etcd-node1.devopslive.ru=https://node1.devopslive.ru:2380"
+Environment="ETCD_INITIAL_ADVERTISE_PEER_URLS=https://node3.devopslive.ru:2380"
+Environment="ETCD_INITIAL_CLUSTER_STATE=existing"
+Type=notify
+ExecStart=/usr/local/bin/etcd \
+  --cert-file=/etc/kubernetes/pki/etcd-server.pem \
+  --key-file=/etc/kubernetes/pki/etcd-server-key.pem \
+  --peer-cert-file=/etc/kubernetes/pki/etcd-peer.pem \
+  --peer-key-file=/etc/kubernetes/pki/etcd-peer-key.pem \
+  --trusted-ca-file=/etc/kubernetes/pki/kube-ca.pem \
+  --peer-trusted-ca-file=/etc/kubernetes/pki/kube-ca.pem \
+  --peer-client-cert-auth \
+  --client-cert-auth \
+  --listen-peer-urls https://0.0.0.0:2380 \
+  --listen-client-urls https://0.0.0.0:2379 \
+  --advertise-client-urls https://node3.devopslive.ru:2379,https://node3.devopslive.ru:4001 \
+  --initial-cluster-token etcd-cluster-1 \
+  --data-dir=/var/lib/etcd
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+

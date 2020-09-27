@@ -1,0 +1,13 @@
+{
+  "CN": "etcd-node3.devopslive.ru",
+  "hosts": [
+    "node3.devopslive.ru",
+    "10.0.0.13",
+    "localhost",
+    "127.0.0.1"
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  }
+}
