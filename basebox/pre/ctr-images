@@ -1,0 +1,4 @@
+rancher/nginx-ingress-controller:nginx-0.25.1-rancher1
+rancher/calico-node:v3.7.4
+rancher/calico-cni:v3.7.4
+rancher/coreos-flannel:v0.11.0

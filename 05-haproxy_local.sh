@@ -13,9 +13,6 @@ cfssl gencert \
 rm pki/haproxy.csr
 
 sudo bash -s <<EOF
-add-apt-repository ppa:vbernat/haproxy-2.2 -y
-apt install -y haproxy
-rm /etc/rsyslog.d/49-haproxy.conf
 mkdir -p /etc/kubernetes/pki
 cat pki/haproxy-key.pem pki/haproxy.pem > /etc/kubernetes/pki/healthcheck.pem
 cp vanilla/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg

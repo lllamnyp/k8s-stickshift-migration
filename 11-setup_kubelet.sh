@@ -25,5 +25,5 @@ systemctl daemon-reload
 systemctl restart kubelet
 EOF
 
-sleep 3
+sleep 7
 kubectl label node node3.devopslive.ru node-role.kubernetes.io/worker=true

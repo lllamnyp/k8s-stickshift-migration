@@ -35,11 +35,11 @@ fi
 cd ..
 
 # Preload tarball of rancher images
-if [[ ! -f ./images-v1.15.tar ]]
-then
-  while read line
-  do
-    docker pull $line
-  done < ./images-v1.15
-  cat ./images-v1.15 | xargs docker save > ./images-v1.15.tar
-fi
+# if [[ ! -f ./images-v1.15.tar ]]
+# then
+#   while read line
+#   do
+#     docker pull $line
+#   done < ./images-v1.15
+#   cat ./images-v1.15 | xargs docker save > ./images-v1.15.tar
+# fi

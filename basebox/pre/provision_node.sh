@@ -22,7 +22,7 @@ mount -a
 
 apt update
 apt install -y docker-ce=18.06.3~ce~3-0~ubuntu haproxy
-apt install containerd conntrack
+apt install -y containerd conntrack
 systemctl stop haproxy
 systemctl disable haproxy
 rm /etc/rsyslog.d/49-haproxy.conf
@@ -44,6 +44,11 @@ while read line
 do
   docker pull $line
 done < /vagrant/images-v1.15
+
+while read line
+do
+  ctr -n k8s.io i pull docker.io/$line
+done < /vagrant/ctr-images
 
 cp /vagrant/bin/* /usr/local/bin/
 
