@@ -19,6 +19,7 @@ cat sa.pem > /etc/kubernetes/pki/sa.pem
 cat kube-apiserver.service > /etc/systemd/system/kube-apiserver.service
 rm apiserver* sa.pem kube-apiserver*
 systemctl daemon-reload
+systemctl enable kube-apiserver
 systemctl restart kube-apiserver
 EOF
 

@@ -7,5 +7,6 @@ mkdir -p /etc/kubernetes/pki
 cat haproxy-key.pem haproxy.pem > /etc/kubernetes/pki/healthcheck.pem
 rm haproxy-key.pem haproxy.pem
 mv haproxy.cfg /etc/haproxy/haproxy.cfg
+systemctl enable haproxy
 systemctl restart haproxy
 EOF

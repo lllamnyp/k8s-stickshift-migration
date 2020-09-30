@@ -22,6 +22,7 @@ cat kubelet.kubeconfig > /etc/kubernetes/config/kubelet.kubeconfig
 cat kubelet.service > /etc/systemd/system/kubelet.service
 rm kubelet* kube-ca.pem
 systemctl daemon-reload
+systemctl enable kubelet
 systemctl restart kubelet
 EOF
 

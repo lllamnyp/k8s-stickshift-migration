@@ -24,5 +24,6 @@ cat proxy.kubeconfig > /etc/kubernetes/config/proxy.kubeconfig
 cat kube-proxy.service > /etc/systemd/system/kube-proxy.service
 rm proxy* kube-ca.pem kube-proxy*
 systemctl daemon-reload
+systemctl enable kube-proxy
 systemctl restart kube-proxy
 EOF
